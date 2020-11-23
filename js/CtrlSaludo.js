@@ -4,6 +4,6 @@ export class CtrlSaludo {
   calculaSaludo(nombre) {
     const nombreSinEspacios = nombre ? nombre.trim() : "";
     valida(nombreSinEspacios, "Falta proporcionar el nombre.");
-    return `Bienvenido a la plataforma de Git ${nombreSinEspacios}.`;
+    return `Bienvenido${nombreSinEspacios}.`;
   }
 }
