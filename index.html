@@ -28,6 +28,40 @@
     </style>
   </head>
   <body>
+     <div align='center'>
+        <font face="Comic Sans MS,arial">
+          <form id="formSaludo">
+            <h1>Escriba su nombre completo</h1>
+            <p>
+              <label>
+                Nombre
+                <input type="text" name="nombre">
+              </label>
+            </p>
+            <p><button>Calcular</button></p>
+            <p><output name="salida"></output></p>
+          </form>
+          <mi-footer></mi-footer>
+
+          
+          <script type="module">
+            import { CtrlSaludo } from "/js/CtrlSaludo.js";
+            const ctrlSaludo = new CtrlSaludo();
+            formSaludo.addEventListener("submit", evt => {
+              try {
+                evt.preventDefault();
+                const datos = new FormData(formSaludo);
+                const nombre = datos.get("nombre");
+                const saludo = ctrlSaludo.calculaSaludo(nombre);
+                formSaludo.salida.value = saludo;
+              } catch (error) {
+                console.log(error);
+                formSaludo.salida.value = error.message;
+              }
+            });
+          </script>
+</font>
+</div>
     <script type="text/javascript">
       //definimos la funcion
       function calculaIMC()
@@ -64,9 +98,9 @@
       <body>
      <form name="f1" id="f1" action="">
      <!--enmarcamos el formulario-->
-     <fieldset>
+     
      <!--le damos un nombre al marco-->
-     <legend class="padre">CALCULO DEL PESO IDEAL IMC (Indice de Masa Corporal) Creado por Daniel</legend>
+     <legend class="padre">CALCULO DEL PESO IDEAL IMC </legend>
       <p class="azule"> Ingresar Peso en kg:
       <!--definimos una caja donde introducir el dato del peso-->
       <input type="text" name="peso" id="peso" size="3" maxlength="4">
@@ -84,42 +118,9 @@
       <!--definimos una caja donde la funcion escribira el comentario, definido en leyenda-->
       <input type="text" name="leyenda" id="leyenda" size="42">
       </p>
-     </fieldset>
+     
      </form>
-    <div align='center'>
-        <font face="Comic Sans MS,arial">
-          <form id="formSaludo">
-            <h1>Escriba su nombre completo</h1>
-            <p>
-              <label>
-                Nombre
-                <input type="text" name="nombre">
-              </label>
-            </p>
-            <p><button>Calcular</button></p>
-            <p><output name="salida"></output></p>
-          </form>
-          <mi-footer></mi-footer>
-
-          
-          <script type="module">
-            import { CtrlSaludo } from "/js/CtrlSaludo.js";
-            const ctrlSaludo = new CtrlSaludo();
-            formSaludo.addEventListener("submit", evt => {
-              try {
-                evt.preventDefault();
-                const datos = new FormData(formSaludo);
-                const nombre = datos.get("nombre");
-                const saludo = ctrlSaludo.calculaSaludo(nombre);
-                formSaludo.salida.value = saludo;
-              } catch (error) {
-                console.log(error);
-                formSaludo.salida.value = error.message;
-              }
-            });
-          </script>
-</font>
-</div>
+   
     <footer><p>Copyright &copy; 2020 Cruz Ramirez Brandon de Jesus.</p></footer>
   </body>
 
