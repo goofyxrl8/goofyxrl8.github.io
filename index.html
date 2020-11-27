@@ -62,70 +62,16 @@
               }
             });
           </script>
-</font>
-</div>
-    <script type="text/javascript">
-      
-      function calculaIMC()
-      {
-      
-     var peso, altura, imc, leyenda;
-     
-      peso=document.getElementById("peso").value;
-      altura=document.getElementById("altura").value/100;
-     
-      imc=peso/(altura*altura);
-     
-      document.getElementById("imc").value=imc.toFixed(2);
-     
-     if(imc<=20.5)
-      {
-      
-      leyenda="Estas delgado. Debes engordar " + (altura*altura*20.5-peso).toFixed(1) + " kilos";
-      }
-      else if(imc>=25.5)
-     {
-     
-     leyenda="Tienes sobrepeso. Debes adelgazar "+(peso-altura*altura*25.5).toFixed(1) +" kilos";
-     }
-     else
-      {
-      leyenda="Estas en tu peso ideal";
-      }
-     
-     document.getElementById("leyenda").value=leyenda;
-      }
-     </script>
-      </head>
-      <body>
-        <div align='center'>
-     <form name="f1" id="f1" action="">
-     
-     
-     
-     <legend class="padre">CALCULAR EL INDICE DE MASA CORPORAL </legend>
-      <p class="azule"> Ingresar Peso en kg:
-      
-      <input type="text" name="peso" id="peso" size="3" maxlength="4">
-      </p>
-      <p class="azule">Ingresar Altura en cm:
-      
-      <input type="text" name="altura" id="altura" size="3" maxlength="3">
-      </p>
-      
-       <input type="button" value="Calcular " onClick="calculaIMC()">
-      
-       
-       
-       <p> IMC:
-      <input type="text" name="imc" id="imc" size="10" maxlength="15">
-       </p>
-       
-        Informacion Sobre tu Peso:
-      <input type="text" name="leyenda" id="leyenda" size="42">
-      
-     
-     </form>
+<h1>Raiz Cuadrada</h1>
+
+Calcular la raíz cuadrada de 16.<br />
+&#8730;16 = 4
+
+
+<br><br>
+<hr>
+Art&iacute;culo disponible en: <a href="http://lineadecodigo.com/html/raiz-cuadrada-en-html/">http://lineadecodigo.com/html/raiz-cuadrada-en-html/</a><br/>
+<a href="http://lineadecodigo.com" title="Linea de Codigo">lineadecodigo.com</a>
    
     <footer><p>Copyright &copy; 2020 Cruz Ramirez Brandon de Jesus.</p></footer>
   </body>
